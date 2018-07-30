@@ -1,0 +1,12 @@
+<meta charset="UTF-8" />
+
+<st-detalhe
+	   save-function ="$helloworldDetalheCtrl.data.saveFunction($helloworldDetalheCtrl.data.item)"
+	   delete-function = "$helloworldDetalheCtrl.data.deleteFunction($helloworldDetalheCtrl.data.item)"
+	   item = "$helloworldDetalheCtrl.data.item"
+	   cancel-function = "$helloworldDetalheCtrl.data.cancelFunction()"
+	   loading = "$helloworldDetalheCtrl.data.loading"
+	   title  = "{{$helloworldDetalheCtrl.data.item.descricao || 'Cadastro de novo Item'}}">
+	   
+	   <helloworld-form></helloworld-form>
+</st-detalhe>

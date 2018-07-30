@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Informações relacionadas  -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel='canonical' href=''>
+<link rel='manifest' href='manifest.json'>
+<meta name='mobile-web-app-capable' content='yes'>
+<meta name="apple-mobile-web-app-status-bar-style"	content="black-translucent">
+<meta name="mobile-web-app-status-bar-style" content="black-translucent">
+<meta name='apple-mobile-web-app-capable' content='yes'>
+<meta name='application-name' content=''>
+<meta name='apple-mobile-web-app-status-bar-style' content='black'>
+<meta name='apple-mobile-web-app-title' content=''>
+<link rel='icon sizes=192x192' href='icone.png'>
+<link rel='apple-touch-icon' href='icone.png'>
+<meta name='msapplication-TileImage' content='icone.png'>
+<meta name='msapplication-TileColor' content='#3f51b5'>
+<meta name='theme-color' content='#3f51b5'>
+<meta property='og:title' content=''>
+<meta property='og:type' content='website'>
+<meta property='og:image' content='icone.png'>
+<meta property='og:url' content=''>
+<meta property='og:description' content=''>
+<meta name='twitter:card' content='summary'>
+<meta name='twitter:url' content=''>
+<meta name='twitter:title' content=''>
+<meta name='twitter:description' content=''>
+<meta name='twitter:image' content='icone.png'>
+<meta name='twitter:creator' content='@paul_kinlan'>
+<!--  -->
+<title></title>
+
+</head>
+  <span us-spinner spinner-key="spinner-1"></span>
+<body>
+   
+     <!-- Notificações exibidas através de stUtil.showMessage() -->
+	 <div growl></div>
+	 
+    <!-- Splash Screen --> 
+	<div style="margin-top: 15%; text-align:center" class="splash" ng-cloak="">
+	    <img width="329px" src="splash.gif"/>
+	     <p id="text-loading">Carregando o sistema...</p>
+	</div>
+	
+   <!-- Corpo da página -->
+	<div ng-cloak="">
+	   <ng-include src="'app/menu/html/menu.html'"></ng-include>
+	  	<div flex layout="row" layout-padding>
+	      <!-- Container #4 -->
+	      <md-content flex id="content" ng-view>
+	         	
+	      </md-content>
+		</div>
+	</div>
+</body>
+
+<!-- CSS do Saat's Framework-->
+<link rel="stylesheet" href="../bower_components/stapiweb/css/st-api.css"/>
+
+<!-- Angularjs Material -->
+<link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css"/>
+
+<script src="../bower_components/jquery/jquery.min.js"></script>
+<script src="../bower_components\moment\moment.min.js"></script>
+
+<!-- Angularjs -->
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="../bower_components/angular-route/angular-route.min.js"></script>
+<script src="../bower_components/angular-cookies/angular-cookies.min.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="../bower_components/angular-material/angular-material.min.js"></script>
+
+<!-- Outras dependências -->
+
+<!-- Biblioteca base da api-->
+<script src="../bower_components/stapiweb/js/st-api-lib-base.js"></script>
+
+<!-- Angularjs Material -->
+<script src="../bower_components/angular-material/angular-material.min.js"></script>
+
+<!--Arquivo principal da Api -->
+<script src="../bower_components/stapiweb/js/st-api.js"></script>
+
+<!-- Templates da API -->
+<script src="../bower_components/stapiweb/js/st-api-templates.js"></script>
+
+<!-- Arquivos de configuração da aplicação -->
+<script src="app-config.js"></script>
+
+<!-- JS da aplicação -->
+<!-- build:js js/app.js -->
+
+<!-- HelloWorld -->
+ <script src='app/helloworld/js/helloworldController.js'></script>
+<script src='app/helloworld/js/helloworldDirective.js'></script>
+<script src='app/helloworld/js/helloworldFactory.js'></script>
+<script src='app/helloworld/js/helloworldRoute.js'></script>
+
+
+
+<!-- Menu da aplicação -->
+<script src="app/menu/js/menuController.js"></script>
+
+<!-- Login no sistema -->
+<script src="app/login/js/loginRoute.js"></script>
+<script src="app/login/js/loginController.js"></script>
+
+<!-- Página inicial -->
+<script src="app/inicio/js/inicioController.js"></script>
+<script src="app/inicio/js/inicioConfig.js"></script>
+
+<!-- endbuild -->
+
+<!-- Bootstraping da aplicação -->
+<script>
+
+  var html = document.getElementsByTagName('html')[0];
+  var body = document.getElementsByTagName('body')[0];
+   
+  setTimeout(function() {
+	  try{
+	    html.setAttribute('ng-app', 'stapiApp');
+	    body.setAttribute('style', '');
+	    angular.bootstrap(html, ['ng', 'stapiApp']);
+	  }catch(e){
+		  console.log("Ocorreu um erro ao carregar a página");
+		  window.alert("O Sistema não é compatível com seu navegador!\n"+e);
+		  console.log(e);
+	  }
+  }, 30);
+  
+ 
+</script>
+
+</html>

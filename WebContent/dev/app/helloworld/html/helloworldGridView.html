@@ -1,0 +1,17 @@
+<meta charset="UTF-8" />
+<div layout="row"  layout-wrap flex >
+   <div flex="25" flex-xs="100" flex-sm="50" ng-repeat="item in $helloworldListCtrl.data.objetos" >
+       <st-grid-item
+          icon="sentiment_very_satisfied" 
+          item="item" 
+          label="{{item.descricao}}"
+          delete-function="$helloworldListCtrl.data.deleteFunction([item.id])" 
+          open-detail="$helloworldListCtrl.data.openDetail(item)">
+          
+       </st-grid-item>
+	  </div>
+</div>
+ 
+
+   
+      
