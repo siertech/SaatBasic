@@ -6,29 +6,32 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		clean: ["dist", '.tmp'],
+		clean: ['.tmp'],
 
 		copy: {
 			main: {
 				expand: true,
 				cwd: 'dev/',
 				src: ['**',
-				      '!js/**',
-				      '!lib/**',
-				      '!global/lib/**',
-				      '!global/st-api/**/*.js',
-				      '!**/*.css',
-				      '!**/*.png',
-				      '*.png'],
-				dest: 'dist/'
-			},
-			shims: {
-				expand: true,
-				cwd: 'dev/global/font-awesome-4.7.0/fonts/',
-				src: ['**'],
-				dest: 'dist/fonts'
-			}
+					'!js/**',
+					'!lib/**',
+					'!global/**',
+					'!app/**',
+					'!**/*.css',
+					'!**/*.png',
+					'!*.js',
+					//'!*.html',
+					'!*.css',
+					'!*.json',
+					'!*.gif',
+					'*.png',
 
+
+					],
+					dest: 'dist/'
+			}
+			
+			
 
 		},
 
@@ -46,12 +49,6 @@ module.exports = function (grunt) {
 
 
 
-		rev: {
-			files: {
-				src: ['dist/**/*.{js,css}', '!dev/global/font-awesome-4.7.0/fonts/**']
-			}
-		},
-
 		useminPrepare: {
 			html: 'dev/index.html'
 		},
@@ -66,8 +63,6 @@ module.exports = function (grunt) {
 				mangle: false
 			}
 		},
-
-
 
 		karma: {
 			unit: {
@@ -88,25 +83,30 @@ module.exports = function (grunt) {
 
 		},
 
+		ngdocs: {
+			all:["dev/global/st-api/**/*.js"]
+		},
+	
+
 
 		ngtemplates:  {
-			 
-			  app:        {
-				  
+
+			app:        {
+
 				cwd:      'dev/',
-			    src:      'global/st-api/**/*.html',
-			    dest:     'dist/js/st-api-templates.js',
-			    options:    {
-			    	module:"adm",
-			        htmlmin:  { collapseWhitespace: true, collapseBooleanAttributes: true }
-			      }
-			   
-			  },
-			  
-			}
+				src:       'app/**/*.html',
+				dest:     'dist/js/app-templates.js',
+				options:    {
+					module:"stapiApp",
+					htmlmin:  { collapseWhitespace: true, collapseBooleanAttributes: true }
+				}
 
+			},
 
+		}
+		
 	});
+
 
 	grunt.loadNpmTasks('grunt-angular-templates');
 	grunt.loadNpmTasks('grunt-protractor-runner');
@@ -119,21 +119,34 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-rev'); //Adiciona números aleatórios aos nomes dos arquivos minificados (Util para lógicas de cache)
 	grunt.loadNpmTasks('grunt-usemin');
 
+	grunt.loadNpmTasks('grunt-ngdocs');
+
 	// Tell Grunt what to do when we type "grunt" into the terminal
 
+
+
 	grunt.registerTask('war', [
-	                           'war'
-	                           ]);
+		'war'
+		]);
 	grunt.registerTask('default', [
-	                              // 'karma',
-	                              // 'copy',
-	                              // 'useminPrepare',
-	                              // 'concat',
-	                              // 'uglify',
-	                               //'cssmin',
-	                               //'usemin',
-	                               'ngtemplates'
-	                               ]);
+		//'karma',
+		'copy',
+		'useminPrepare',
+		'concat',
+		'uglify',
+		'cssmin',
+		'usemin',
+		'ngtemplates'
+		
+		]);
+
+	grunt.registerTask('api', [
+		//'karma',
+		'copy',
+		'useminPrepare',
+		'concat',
+		'ngtemplates'
+		]);
 
 	grunt.registerTask('end2end', ['protractor']);
 };

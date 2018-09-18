@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Informações relacionadas  -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel='canonical' href=''>
+<link rel='manifest' href='manifest.json'>
+<meta name='mobile-web-app-capable' content='yes'>
+<meta name="apple-mobile-web-app-status-bar-style"	content="black-translucent">
+<meta name="mobile-web-app-status-bar-style" content="black-translucent">
+<meta name='apple-mobile-web-app-capable' content='yes'>
+<meta name='application-name' content=''>
+<meta name='apple-mobile-web-app-status-bar-style' content='black'>
+<meta name='apple-mobile-web-app-title' content=''>
+<link rel='icon sizes=192x192' href='icone.png'>
+<link rel='apple-touch-icon' href='icone.png'>
+<meta name='msapplication-TileImage' content='icone.png'>
+<meta name='msapplication-TileColor' content='#3f51b5'>
+<meta name='theme-color' content='#3f51b5'>
+<meta property='og:title' content=''>
+<meta property='og:type' content='website'>
+<meta property='og:image' content='icone.png'>
+<meta property='og:url' content=''>
+<meta property='og:description' content=''>
+<meta name='twitter:card' content='summary'>
+<meta name='twitter:url' content=''>
+<meta name='twitter:title' content=''>
+<meta name='twitter:description' content=''>
+<meta name='twitter:image' content='icone.png'>
+<meta name='twitter:creator' content='@paul_kinlan'>
+<!--  -->
+<title></title>
+
+</head>
+  <span us-spinner spinner-key="spinner-1"></span>
+
+<body>
+   
+     <!-- Notificações exibidas através de stUtil.showMessage() -->
+	 <div growl></div>
+	 
+	
+    <!-- Splash Screen --> 
+	<div style="margin-top: 15%; text-align:center" class="splash" ng-cloak="">
+	    <img width="329px" src="splash.gif"/>
+	     <p id="text-loading">Carregando o sistema...</p>
+	</div>
+	
+   <!-- Corpo da página -->
+	<div ng-cloak="">
+	   <ng-include src="'app/menu/html/menu.html'"></ng-include>
+	  	<div flex layout="row" layout-padding>
+	      <!-- Container #4 -->
+	      <md-content flex id="content" ng-view>
+	         	<test-user-button ng-show="(!testIsOpen || testIsOpen==false)"></test-user-button>  
+	      </md-content>
+		</div>
+	</div>
+</body>
+
+<link rel="stylesheet" href="dist/css/base.css"/>
+<link rel="stylesheet" href="dist/css/app.css"/>
+<script src="dist/js/base.js"></script>
+<script src="dist/js/app-templates.js"></script>
+<script src="dist/js/app.js"></script>
+
+<script>
+
+  var html = document.getElementsByTagName('html')[0];
+  var body = document.getElementsByTagName('body')[0];
+   
+  setTimeout(function() {
+	  try{
+	    html.setAttribute('ng-app', 'stapiApp');
+	    body.setAttribute('style', '');
+	    angular.bootstrap(html, ['ng', 'stapiApp']);
+	  }catch(e){
+		  console.log("Ocorreu um erro ao carregar a página");
+		  window.alert("O Sistema não é compatível com seu navegador!\n"+e);
+		  console.log(e);
+	  }
+  }, 30);
+  
+ //Analise de métrica para tempo de carregamento do sistema 
+ window.inicioCarregamento = new Date().getTime();
+</script>
+
+
+</html>

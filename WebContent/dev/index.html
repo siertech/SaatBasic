@@ -60,14 +60,21 @@
 	</div>
 </body>
 
-<!-- CSS do Saat's Framework-->
-<link rel="stylesheet" href="../bower_components/stapiweb/css/st-api.css"/>
-
+<!-- build:css css/base.css -->
 <!-- Angularjs Material -->
 <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css"/>
 
+<!-- CSS do Saat's Framework-->
+<link rel="stylesheet" href="../bower_components/stapiweb/css/st-api.css"/>
+
+<!-- endbuild -->
+
+<!-- build:css css/app.css -->
+
+<!-- endbuild -->
+
+<!-- build:js js/base.js -->
 <script src="../bower_components/jquery/jquery.min.js"></script>
-<script src="../bower_components\moment\moment.min.js"></script>
 
 <!-- Angularjs -->
 <script src="../bower_components/angular/angular.min.js"></script>
@@ -78,8 +85,6 @@
 <script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 <script src="../bower_components/angular-messages/angular-messages.min.js"></script>
 <script src="../bower_components/angular-material/angular-material.min.js"></script>
-
-<!-- Outras dependências -->
 
 <!-- Biblioteca base da api-->
 <script src="../bower_components/stapiweb/js/st-api-lib-base.js"></script>
@@ -93,11 +98,17 @@
 <!-- Templates da API -->
 <script src="../bower_components/stapiweb/js/st-api-templates.js"></script>
 
-<!-- Arquivos de configuração da aplicação -->
-<script src="app-config.js"></script>
+<!-- endbuild -->
+
+<script src="js/app-templates.js"></script>
+
 
 <!-- JS da aplicação -->
 <!-- build:js js/app.js -->
+
+<!-- Arquivos de configuração da aplicação -->
+<script src="app-config.js"></script>
+
 
 <!-- HelloWorld -->
  <script src='app/helloworld/js/helloworldController.js'></script>
