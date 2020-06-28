@@ -19,5 +19,8 @@
     <mapping class="com.siertech.stapi.opcao.Opcao" />
   
 	<mapping class="helloworld.HelloWorld" />
+	<mapping class="resultado.Resultado" />
+	
+	<mapping class="imovel.Imovel" />
 </session-factory>
 </hibernate-configuration>

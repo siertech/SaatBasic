@@ -1,0 +1,12 @@
+<meta charset="UTF-8" />
+
+<st-detalhe
+	   save-function ="$resultadoDetalheCtrl.data.saveFunction($resultadoDetalheCtrl.data.item)"
+	   delete-function = "$resultadoDetalheCtrl.data.deleteFunction($resultadoDetalheCtrl.data.item)"
+	   item = "$resultadoDetalheCtrl.data.item"
+	   cancel-function = "$resultadoDetalheCtrl.data.cancelFunction()"
+	   loading = "$resultadoDetalheCtrl.data.loading"
+	   title  = "{{$resultadoDetalheCtrl.data.item.label_ || 'Cadastro de novo Item'}}">
+	   
+	   <resultado-form></resultado-form>
+</st-detalhe>

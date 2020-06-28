@@ -1,0 +1,12 @@
+<meta charset="UTF-8" />
+
+<st-detalhe
+	   save-function ="$imovelDetalheCtrl.data.saveFunction($imovelDetalheCtrl.data.item)"
+	   delete-function = "$imovelDetalheCtrl.data.deleteFunction($imovelDetalheCtrl.data.item)"
+	   item = "$imovelDetalheCtrl.data.item"
+	   cancel-function = "$imovelDetalheCtrl.data.cancelFunction()"
+	   loading = "$imovelDetalheCtrl.data.loading"
+	   title  = "{{$imovelDetalheCtrl.data.item.codigoCef || 'Cadastro de novo Item'}}">
+	   
+	   <imovel-form></imovel-form>
+</st-detalhe>

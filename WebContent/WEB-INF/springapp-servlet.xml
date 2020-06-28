@@ -22,6 +22,9 @@
         http://www.springframework.org/schema/security/spring-security.xsd">
       
        <!-- Mapeamento de classes da aplicacao--> 
+	<context:component-scan base-package="imovel" />   
+	 
+	<context:component-scan base-package="resultado" />   
 	<context:component-scan base-package="helloworld" />   
 	
 	 

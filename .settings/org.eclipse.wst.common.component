@@ -7,7 +7,8 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/test"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_generated"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_generated_tests"/>
         <property name="java-output-path" value="/Albar/target/classes"/>
-        <property name="context-root" value="SaatBasic"/>
+        <property name="context-root" value="/"/>
     </wb-module>
 </project-modules>

@@ -14,9 +14,9 @@ app.factory('config',function(){
 		scope: "static",
 		confs:{
 				path: "SaatBasic",
-				securityPaths: "all", //paths da aplicação onde a autenticação no sistema é necessária
+				securityPaths: ["inicio"], //paths da aplicação onde a autenticação no sistema é necessária
 				appVersion: "1.0",
-				initialPath: "/helloworld",
+				initialPath: "/resultado",
 				loginPath: "/login",
 				notFoundPath:"/notfound",
 				pathsToHideMenu: ["/login"] //Nos paths definidos aqui o menu não será exibido

@@ -1,0 +1,124 @@
+<meta charset="UTF-8" />
+
+
+<div layout="row">
+<div flex="30">
+
+<md-card>
+     <md-card-content>
+       <div style="color: white;background-color: #3f51b5;padding: 9px;margin-left: -23px;">
+       <h3>FILTROS</h3>
+       </div>
+       
+       <md-divider></md-divider>
+       <md-input-container class="md-block">
+       <p class="text-muted">Tipo</p>
+        <md-checkbox name="tos" ng-model="project.tos" required>
+          Apartamento
+        </md-checkbox>
+        <md-checkbox name="tos" ng-model="project.tos" required>
+          Lote
+        </md-checkbox>
+        <md-checkbox name="tos" ng-model="project.tos" required>
+          Casa
+        </md-checkbox>
+      </md-input-container>
+      
+      
+      <div layout="row"> 
+         <md-input-container class="md-block" flex-gt-sm>
+            <label>De</label>
+            <input>
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Até</label>
+            <input>
+          </md-input-container>
+      </div>
+      
+       <div layout="row"> 
+         <md-input-container class="md-block" flex-gt-sm>
+            <label>Cidade</label>
+            <input>
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>UF</label>
+            <input>
+          </md-input-container>
+      </div>
+      
+      <div layout="row"> 
+         <md-input-container class="md-block" flex-gt-sm>
+            <label>Ocupação</label>
+            <md-select ng-model="user.state">
+              <md-option value="desocupado">
+                Desocupados
+              </md-option>
+              <md-option value="desocupado">
+                Ocupados
+              </md-option>
+              <md-option value="desocupado">
+                Todos
+              </md-option>
+            </md-select>
+          </md-input-container>
+      </div>
+      
+      <section layout="row" layout-sm="column" layout-align="end end" layout-wrap>
+          
+	      <md-button class="md-raised md-default"><ng-md-icon icon="search"> </ng-md-icon><strong>Aplicar</strong> 
+	      </md-button>
+	     
+	  </section>
+     
+     </md-card-content>
+</md-card>
+
+</div>
+<div flex="70"  layout-wrap flex >
+   <div flex="100" flex-xs="100" flex-sm="50" ng-repeat="item in $imovelListCtrl.data.objetos" >
+       <md-card>
+          <md-card-content>
+          
+           <div style="color: white;background-color: #3f51b5;padding: 9px;margin-left: -23px;">
+                <h3>{{item.tipoVenda|uppercase}} | {{item.ocupacao|uppercase}}</h3>
+              </div>
+          <div style="font-size:13px;">
+              
+              
+             
+              
+              <p>
+	          <ng-md-icon  md-colors="{color: 'primary'}" icon="info"></ng-md-icon>
+	          <strong>DESCRIÇÃO</strong>
+	          </p> 
+	          <p class="text-muted">{{item.descricao}}</p>
+	          <p>FGTS: <strong>{{item.fgts=='S' ? 'SIM' : 'NÃO'}}</strong></p>
+	          <p>Parcelamento: <strong>{{item.parcelamento=='S' ? 'SIM' : 'NÃO'}}</strong></p>
+	          <p>Financiamento: <strong>{{item.financiamento=='S' ? 'SIM' : 'NÃO'}}</strong></p>
+	          
+	           <md-divider></md-divider>
+	          <p>
+	          <ng-md-icon md-colors="{color: 'amber'}" icon="location_on"></ng-md-icon>
+	          <strong>ENDEREÇO</strong>
+	          </p>
+	          <p class="text-muted"> {{item.endereco}}</p>
+	          <p></p>
+	          <md-divider></md-divider>
+	          <p>
+	          <ng-md-icon md-colors="{color: 'green'}" icon="attach_money"></ng-md-icon>
+	          <strong>CONDIÇÕES</strong>
+	          </p>
+	          <p><strong>Preço: </strong>{{item.preco|currency}} | <strong>Avaliação: </strong>{{item.precoAvaliacao|currency}} | <strong>Lucro Bruto: </strong>{{(item.precoAvaliacao-item.preco)|currency}} </p>
+          </div>
+          </md-card-content>
+          
+       </md-card>
+	  </div>
+</div>
+<span flex></span>
+</div>
+
+
+   
+      
