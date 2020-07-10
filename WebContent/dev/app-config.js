@@ -13,8 +13,8 @@ app.factory('config',function(){
 		  
 		scope: "static",
 		confs:{
-				path: "SaatBasic",
-				securityPaths: ["inicio"], //paths da aplicação onde a autenticação no sistema é necessária
+				path: "RoboMl",
+				securityPaths: [], //paths da aplicação onde a autenticação no sistema é necessária
 				appVersion: "1.0",
 				initialPath: "/resultado",
 				loginPath: "/login",

@@ -1,0 +1,14 @@
+<meta charset="UTF-8" />
+
+<st-detalhe
+	  
+	   save-function ="$historicorastreamentoDetalheCtrl.data.saveFunction($historicorastreamentoDetalheCtrl.data.item)"
+	   hide-crud-buttons ="true"
+ 	   delete-function = "$historicorastreamentoDetalheCtrl.data.deleteFunction($historicorastreamentoDetalheCtrl.data.item)"
+	   item = "$historicorastreamentoDetalheCtrl.data.item"
+	   cancel-function = "$historicorastreamentoDetalheCtrl.data.cancelFunction()"
+	   loading = "$historicorastreamentoDetalheCtrl.data.loading"
+	   title  = "{{$historicorastreamentoDetalheCtrl.data.item.link || 'Cadastro de novo Item'}}">
+	   
+	   <historicorastreamento-form></historicorastreamento-form>
+</st-detalhe>

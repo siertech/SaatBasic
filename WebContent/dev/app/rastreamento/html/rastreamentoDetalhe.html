@@ -1,0 +1,18 @@
+<meta charset="UTF-8" />
+
+<st-detalhe
+	  
+	   save-function ="$rastreamentoDetalheCtrl.data.saveFunction($rastreamentoDetalheCtrl.data.item)"
+	   hide-crud-buttons ="true"
+ 	   delete-function = "$rastreamentoDetalheCtrl.data.deleteFunction($rastreamentoDetalheCtrl.data.item)"
+	   item = "$rastreamentoDetalheCtrl.data.item"
+	   cancel-function = "$rastreamentoDetalheCtrl.data.cancelFunction()"
+	   loading = "$rastreamentoDetalheCtrl.data.loading"
+	   title  = "{{$rastreamentoDetalheCtrl.data.item.titulo || 'Cadastro de novo Item'}}">
+	   
+	   <rastreamento-form></rastreamento-form>
+	   
+	   <div layout="row">
+	    <a target="_blank" href="{{$rastreamentoDetalheCtrl.data.item.linkTransformed}}">Ver link de resultados</a>
+	   </div>
+</st-detalhe>

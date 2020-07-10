@@ -1,0 +1,17 @@
+<meta charset="UTF-8" />
+<div layout="row"  layout-wrap flex >
+   <div flex="25" flex-xs="100" flex-sm="50" ng-repeat="item in $historicorastreamentoListCtrl.data.objetos" >
+       <st-grid-item
+          icon="" 
+          item="item" 
+          label="{{item.link}}"
+          delete-function="$historicorastreamentoListCtrl.data.deleteFunction([item.id])" 
+          open-detail="$historicorastreamentoListCtrl.data.openDetail(item)">
+          
+       </st-grid-item>
+	  </div>
+</div>
+ 
+
+   
+      

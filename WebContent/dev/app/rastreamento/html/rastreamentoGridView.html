@@ -1,0 +1,17 @@
+<meta charset="UTF-8" />
+<div layout="row"  layout-wrap flex >
+   <div flex="25" flex-xs="100" flex-sm="50" ng-repeat="item in $rastreamentoListCtrl.data.objetos" >
+       <st-grid-item
+          icon="" 
+          item="item" 
+          label="{{item.titulo}}"
+          delete-function="$rastreamentoListCtrl.data.deleteFunction([item.id])" 
+          open-detail="$rastreamentoListCtrl.data.openDetail(item)">
+          
+       </st-grid-item>
+	  </div>
+</div>
+ 
+
+   
+      

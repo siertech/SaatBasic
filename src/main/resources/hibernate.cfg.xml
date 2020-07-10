@@ -22,5 +22,8 @@
 	<mapping class="resultado.Resultado" />
 	
 	<mapping class="imovel.Imovel" />
+	<mapping class="rastreamento.Rastreamento" />
+	<mapping class="historicorastreamento.HistoricoRastreamento" />
+	
 </session-factory>
 </hibernate-configuration>

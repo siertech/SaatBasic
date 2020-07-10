@@ -1,0 +1,15 @@
+<meta charset="UTF-8" />
+<div layout="row" class="md-block" layout-wrap>
+   <st-input-string flex="50" flex-xs="100"  label="Título do Rastreamento" ng-model="$rastreamentoDetalheCtrl.data.item.titulo" ></st-input-string>
+   
+   <st-input-string flex="25" flex-xs="100"  label="Preço de" ng-model="$rastreamentoDetalheCtrl.data.item.precoDe" ></st-input-string>
+   <st-input-string flex="25" flex-xs="100"  label="Preço até" ng-model="$rastreamentoDetalheCtrl.data.item.precoAte" ></st-input-string>
+   <st-input-string flex="50" flex-xs="100"  label="Link de pesquisa" ng-model="$rastreamentoDetalheCtrl.data.item.linkResultados" ></st-input-string>
+   <st-input-string flex="50" flex-xs="100"  label="Emails" ng-model="$rastreamentoDetalheCtrl.data.item.emails" ></st-input-string>
+   <st-input-string flex="50" flex-xs="100"  label="Termo principal" ng-model="$rastreamentoDetalheCtrl.data.item.termoPrincipal" ></st-input-string>
+   <st-input-string flex="50" flex-xs="100"  label="Termos negativos" ng-model="$rastreamentoDetalheCtrl.data.item.termosNegativos" ></st-input-string>
+   <st-input-string flex="50" flex-xs="100"  label="Intervalo(Em minutos)" ng-model="$rastreamentoDetalheCtrl.data.item.intervalo" ></st-input-string>
+   <st-input-string flex="50" flex-xs="100"  label="Alertar similar (0 ou 1)"  ng-model="$rastreamentoDetalheCtrl.data.item.alertarSimilar" ></st-input-string>
+   
+   <md-switch ng-change="$rastreamentoDetalheCtrl.data.saveFunction($rastreamentoDetalheCtrl.data.item)" ng-model="$rastreamentoDetalheCtrl.data.item.statusExecucao" ng-true-value="1" ng-false-value="0">Executar</md-switch>
+</div>

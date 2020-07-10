@@ -1,0 +1,60 @@
+﻿<meta charset="UTF-8" />
+<md-card style="padding-top: 15px;" ng-hide="$historicorastreamentoListCtrl.hideFilter==true">
+        <md-toolbar class="md-table-toolbar md-default">
+	          <div layout="row" class="md-toolbar-tools"  layout-wrap>
+		           <div flex="20"  hide-xs md-hide-xs>
+					   <md-button class="add-button md-raised" ng-click="$historicorastreamentoListCtrl.data.openDetail()" >
+					   <ng-md-icon icon="add"></ng-md-icon>
+					      Cadastrar
+					    </md-button>
+			       </div>
+				   <st-filter  
+				         flex-xs="80" 
+				         flex="60"
+						 query-options = "$historicorastreamentoListCtrl.data.requestListParams"
+						 get-list = "$historicorastreamentoListCtrl.data.getList"
+						 filtros="$historicorastreamentoListCtrl.data.filtros"
+						>
+				   </st-filter>
+	   			<view-chose flex="10" view-type="config.confs.viewType" ></view-chose>
+	          </div>
+         </md-toolbar>
+</md-card>
+
+<st-check-list 
+    attr-label="link" 
+    hide-delete-all="true"
+    show-border-no-items="true"
+    hide-add = "true"
+    hide-checkbox="true"
+    crud-options = "{objectName: 'HistoricoRastreamento'}"
+    ></st-check-list>
+
+	<float-button-add ng-hide="$historicorastreamentoListCtrl.hideButtonAdd==true"  class="float-add-button" tooltip-label="Cadastrar novo historicorastreamento" ng-click="$historicorastreamentoListCtrl.data.openDetail()" ></float-button-add>
+	<div layout="row" style="margin:8px">
+	    <md-progress-linear
+	          flex
+	          ng-if="$historicorastreamentoListCtrl.data.loading===true"
+	          md-mode="indeterminate">
+	    </md-progress-linear>
+	</div>
+	
+	<st-selected-items-actions 
+	   delete-function="$historicorastreamentoListCtrl.data.deleteFunction($historicorastreamentoListCtrl.data.getSelectedItemsIds())" 
+	   selected-items="$historicorastreamentoListCtrl.data.selectedItems">
+	</st-selected-items-actions>
+	 
+ 	<historicorastreamento-grid-view ng-show="config.confs.viewType=='grid'" ></historicorastreamento-grid-view>
+ 	<historicorastreamento-table-view  ng-show="config.confs.viewType=='table'" ></historicorastreamento-table-view>
+	
+	<div ng-if="$historicorastreamentoListCtrl.data.objetos.length==0">
+	    <p class="text-muted">Nenhum item encontrado</p>
+    </div>
+   
+    <st-filter-pagination
+         ng-hide="$historicorastreamentoListCtrl.hidePagination==true" 
+	     total-itens="$historicorastreamentoListCtrl.data.totalItens" 
+	     itens-in-page="$historicorastreamentoListCtrl.data.objetos.length" 
+	     get-list="$historicorastreamentoListCtrl.data.getList" 
+	     query-options="$historicorastreamentoListCtrl.data.requestListParams"  >
+    </st-filter-pagination>
